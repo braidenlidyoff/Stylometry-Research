@@ -1,0 +1,71 @@
+2024-12-03 22:20:03,231 - INFO - Using device: cpu
+2024-12-03 22:20:03,235 - INFO - Loading NLP models...
+2024-12-03 22:22:22,295 - INFO - Processing file: data/input/academic_1.txt
+2024-12-03 22:22:22,358 - INFO - Split into 6 chunks
+2024-12-03 22:22:31,632 - INFO - Successfully processed data/input/academic_1.txt
+2024-12-03 22:22:31,633 - INFO - Processing file: data/input/academic_2.txt
+2024-12-03 22:22:31,675 - INFO - Split into 6 chunks
+2024-12-03 22:22:40,672 - INFO - Successfully processed data/input/academic_2.txt
+2024-12-03 22:22:40,674 - INFO - Processing file: data/input/academic_3.txt
+2024-12-03 22:22:40,715 - INFO - Split into 6 chunks
+2024-12-03 22:22:49,978 - INFO - Successfully processed data/input/academic_3.txt
+2024-12-03 22:22:49,980 - INFO - Processing file: data/input/narrative_1.txt
+2024-12-03 22:22:50,023 - INFO - Split into 6 chunks
+2024-12-03 22:22:59,177 - INFO - Successfully processed data/input/narrative_1.txt
+2024-12-03 22:22:59,178 - INFO - Processing file: data/input/narrative_2.txt
+2024-12-03 22:22:59,218 - INFO - Split into 6 chunks
+2024-12-03 22:23:08,510 - INFO - Successfully processed data/input/narrative_2.txt
+2024-12-03 22:23:08,511 - INFO - Processing file: data/input/narrative_3.txt
+2024-12-03 22:23:08,552 - INFO - Split into 6 chunks
+2024-12-03 22:23:18,540 - INFO - Successfully processed data/input/narrative_3.txt
+2024-12-03 22:23:18,542 - INFO - Processing file: data/input/sermonic_1.txt
+2024-12-03 22:23:18,588 - INFO - Split into 6 chunks
+2024-12-03 22:23:28,170 - INFO - Successfully processed data/input/sermonic_1.txt
+2024-12-03 22:23:28,172 - INFO - Processing file: data/input/sermonic_2.txt
+2024-12-03 22:23:28,212 - INFO - Split into 6 chunks
+2024-12-03 22:23:38,292 - INFO - Successfully processed data/input/sermonic_2.txt
+2024-12-03 22:23:38,294 - INFO - Processing file: data/input/sermonic_3.txt
+2024-12-03 22:23:38,335 - INFO - Split into 6 chunks
+2024-12-03 22:23:49,440 - INFO - Successfully processed data/input/sermonic_3.txt
+2024-12-04 01:14:34,696 - INFO - Using device: cpu
+2024-12-04 01:14:34,699 - INFO - Loading NLP models...
+2024-12-04 01:26:08,537 - INFO - Using device: cpu
+2024-12-04 01:26:08,538 - INFO - Loading NLP models...
+2024-12-04 01:28:31,753 - INFO - Processing file: data/input/Section B1.8.2.txt
+2024-12-04 01:28:31,995 - INFO - Split into 24 chunks
+2024-12-04 01:29:15,349 - INFO - Successfully processed data/input/Section B1.8.2.txt
+2024-12-04 01:29:15,356 - INFO - Processing file: data/input/Section B1.2.17.txt
+2024-12-04 01:29:15,400 - INFO - Split into 1 chunks
+2024-12-04 01:29:15,863 - INFO - Successfully processed data/input/Section B1.2.17.txt
+2024-12-04 01:29:15,863 - INFO - Processing file: data/input/Section B1.2.9.txt
+2024-12-04 01:29:15,949 - INFO - Split into 7 chunks
+2024-12-04 01:29:33,013 - INFO - Successfully processed data/input/Section B1.2.9.txt
+2024-12-04 01:29:33,016 - INFO - Processing file: data/input/Section B1.2.8.txt
+2024-12-04 01:29:33,117 - INFO - Split into 10 chunks
+2024-12-04 01:29:51,669 - INFO - Successfully processed data/input/Section B1.2.8.txt
+2024-12-04 01:29:51,670 - INFO - Processing file: data/input/Section B1.2.16.txt
+2024-12-04 01:29:51,881 - INFO - Split into 20 chunks
+2024-12-04 01:30:31,309 - INFO - Successfully processed data/input/Section B1.2.16.txt
+2024-12-04 01:30:31,313 - INFO - Processing file: data/input/Section B1.8.3.txt
+2024-12-04 01:30:31,498 - INFO - Split into 22 chunks
+2024-12-04 01:31:13,139 - INFO - Successfully processed data/input/Section B1.8.3.txt
+2024-12-04 01:31:13,143 - INFO - Processing file: data/input/Section B1.8.1.txt
+2024-12-04 01:31:13,179 - INFO - Split into 3 chunks
+2024-12-04 01:31:18,781 - INFO - Successfully processed data/input/Section B1.8.1.txt
+2024-12-04 01:31:18,786 - INFO - Processing file: data/input/Section B1.2.14.txt
+2024-12-04 01:31:18,904 - INFO - Split into 11 chunks
+2024-12-04 01:31:40,937 - INFO - Successfully processed data/input/Section B1.2.14.txt
+2024-12-04 01:31:40,942 - INFO - Processing file: data/input/Section B1.2.28.txt
+2024-12-04 01:31:41,049 - INFO - Split into 11 chunks
+2024-12-04 01:32:17,086 - INFO - Successfully processed data/input/Section B1.2.28.txt
+2024-12-04 01:32:17,090 - INFO - Processing file: data/input/Section B1.2.29.txt
+2024-12-04 01:32:17,195 - INFO - Split into 7 chunks
+2024-12-04 01:32:31,436 - INFO - Successfully processed data/input/Section B1.2.29.txt
+2024-12-04 01:32:31,440 - INFO - Processing file: data/input/Section B1.2.15.txt
+2024-12-04 01:32:31,589 - INFO - Split into 16 chunks
+2024-12-04 01:33:04,023 - INFO - Successfully processed data/input/Section B1.2.15.txt
+2024-12-04 01:33:04,024 - INFO - Processing file: data/input/Section B1.4.9.txt
+2024-12-04 01:33:04,099 - INFO - Split into 9 chunks
+2024-12-04 01:33:19,866 - INFO - Successfully processed data/input/Section B1.4.9.txt
+2024-12-04 01:33:19,868 - INFO - Processing file: data/input/Section B1.8.4.txt
+2024-12-04 01:33:21,120 - INFO - Split into 57 chunks
