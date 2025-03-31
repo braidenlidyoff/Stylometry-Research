@@ -50,12 +50,13 @@ def data_extract(pdf_path, start_page, end_page, output_folder):
                 if line in ["THE OLD ENGLISH CORPUS", "A: Texts"]:  # Skip section headers
                     continue
 
-                # Detect WorkID (e.g., "A1.1: GenA,B")
-                if re.match(r'^[A-Z]\d+(\.\d+)?:\s*\S+', line):
+                # Detect WorkID (e.g., "B1.1.1: GenA,B")
+                if re.match(r'^[A-Z]\d+(\.\d+)*:\s*\S+', line):
                     # Save previous work
                     save_current_work(current_work, current_collection, current_title, current_text, output_folder, data)
-                        
+                    
                     current_work = line.strip()
+                    # Extract CollectionID (e.g., "B1" from "B1.1.1")
                     current_collection = re.match(r'^([A-Z]\d+)', current_work).group(1)
                     current_text = []  # Reset text collection
                     continue
@@ -81,9 +82,9 @@ def data_extract(pdf_path, start_page, end_page, output_folder):
     return df
 
 # Path & Function Call
-pdf_path = r"The Old English Corpus.pdf"
+pdf_path = r"/Users/braidenlidyoff/Stylometry-Research/The Old English Corpus.pdf"
 output_folder = "output_text_files"
-df = data_extract(pdf_path, start_page=39, end_page=50, output_folder=output_folder)
+df = data_extract(pdf_path, start_page=2740, end_page=2900, output_folder=output_folder)
 
 output_file = "parsed_old_english_corpus.xlsx"
 
