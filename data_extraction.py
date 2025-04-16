@@ -34,6 +34,9 @@ def data_extract(pdf_path, start_page, end_page, output_folder):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
     
+    in_title_block = False
+    in_citation_block = False
+
     with pdfplumber.open(pdf_path) as pdf:
         for page_num in range(start_page - 1, end_page):
             page = pdf.pages[page_num]
@@ -63,17 +66,30 @@ def data_extract(pdf_path, start_page, end_page, output_folder):
 
                 # Extract Title
                 if line.startswith("Title:"):
+                    in_title_block=True
                     current_title = line.replace("Title:", "").strip().split(":")[0]
                     continue
 
+                if in_title_block:
+                        # The next line after Title is still part of the title, but we skip it
+                        in_title_block = False
+                        continue
+
                 # Skip citations
                 if line.startswith("Citation:"):
+                    in_citation_block = True
                     continue
+                # If we're inside a citation block and the line doesn't start with a line number, skip it (still part of the citations)
+                if in_citation_block:
+                        if re.match(r'^\d+(?:\(\d+\))?(?:\.\d+){0,3}:\s*', line): # If a line number
+                            in_citation_block = False  # End of citation block
+                        else:
+                            continue  # Still skipping citation content
 
                 # Skip the numbers, but keep the content
-                line = re.sub(r'^\d+:\s*', '', line)  # Remove line numbers
+                line = re.sub(r'^\d+(?:\(\d+\))?(?:\.\d+){0,3}:\s*', '', line)
                 current_text.append(line)
-            
+
         # Save last collected work
         save_current_work(current_work, current_collection, current_title, current_text, output_folder, data)
 
@@ -82,9 +98,9 @@ def data_extract(pdf_path, start_page, end_page, output_folder):
     return df
 
 # Path & Function Call
-pdf_path = r"/Users/braidenlidyoff/Stylometry-Research/The Old English Corpus.pdf"
+pdf_path = r"../The Old English Corpus.pdf"
 output_folder = "output_text_files"
-df = data_extract(pdf_path, start_page=2740, end_page=2900, output_folder=output_folder)
+df = data_extract(pdf_path, start_page=493, end_page=10505, output_folder=output_folder)
 
 output_file = "parsed_old_english_corpus.xlsx"
 
