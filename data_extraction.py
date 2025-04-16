@@ -71,20 +71,21 @@ def data_extract(pdf_path, start_page, end_page, output_folder):
                     continue
 
                 if in_title_block:
-                        # The next line after Title is still part of the title, but we skip it
+                    if line.startswith("Citation:"):
                         in_title_block = False
+                        in_citation_block = True
+                        continue
+                    else:
+                        # The next line after Title is still part of the title, but we skip it
+                        # in_title_block = False
                         continue
 
-                # Skip citations
-                if line.startswith("Citation:"):
-                    in_citation_block = True
-                    continue
-                # If we're inside a citation block and the line doesn't start with a line number, skip it (still part of the citations)
+                # If inside a citation block and the line doesn't start with a line number, skip it (still part of the citations)
                 if in_citation_block:
-                        if re.match(r'^\d+(?:\(\d+\))?(?:\.\d+){0,3}:\s*', line): # If a line number
-                            in_citation_block = False  # End of citation block
-                        else:
-                            continue  # Still skipping citation content
+                    if re.match(r'^\d+(?:\(\d+\))?(?:\.\d+){0,3}:\s*', line): # If a line number
+                        in_citation_block = False  # End of citation block
+                    else:
+                        continue  # Still skipping citation content
 
                 # Skip the numbers, but keep the content
                 line = re.sub(r'^\d+(?:\(\d+\))?(?:\.\d+){0,3}:\s*', '', line)
@@ -100,8 +101,8 @@ def data_extract(pdf_path, start_page, end_page, output_folder):
 # Path & Function Call
 pdf_path = r"../The Old English Corpus.pdf"
 output_folder = "output_text_files"
-df = data_extract(pdf_path, start_page=493, end_page=10505, output_folder=output_folder)
-
+df = data_extract(pdf_path, start_page=1, end_page=494, output_folder=output_folder)
+# from 493
 output_file = "parsed_old_english_corpus.xlsx"
 
 if os.path.exists(output_file):
